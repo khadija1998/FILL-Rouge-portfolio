@@ -75,14 +75,14 @@ $row = mysqli_fetch_array($qslmodif);
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             
-            <button onclick="window.location.href='../controllers/logout.php'">Logout</button>            
+            <button class="logout" onclick="window.location.href='../controllers/logout.php'" >Logout</button>            
         </nav>
 
                 <!-------------------- HEADER TEXT ----------------------->
 
         <div class="para">
         <p class="para-p"><strong> Khadija Zerzkhane </strong></p> 
-            <p>Étudiante en développement Web & technicienne spécialisée en gestion d'entreprise </p>
+        <p>Étudiante en développement Web & technicienne spécialisée en gestion d'entreprise </p>
       </div>
     </header>
 
@@ -147,37 +147,17 @@ $row = mysqli_fetch_array($qslmodif);
         <section id='s2' class="projects">
                     <!-------------------- my projects ----------------------->
 
-                    <?php
-$qslmodif = mysqli_query($Conn, "SELECT titre, para, photo FROM projects");
-$row = mysqli_fetch_array($qslmodif);
-?>
-        <form  method="POST" action="">
-                    <h3>Modifier mes partie de mes projets</h3><br><br>
-                    <div class="a">
-                    <label >Le titre</label><br>
-                    <input  name="titre" id="" value= "<?php echo $row ['titre'];?>"  placeholder="changer le titre">
-                    </div><br>
-                    <div class ="b">
-                    <label >Le text</label><br>
-                    <textarea name="paragraphe" id="" value="<?php echo $row ['para'];?>" placeholder="changer le paragraphe" ></textarea>
-                    </div>
-                    <div class="c">
-                    <label >La photo</label><br>
-                    <input type="file"  name="photo" id="" value= "<?php echo $row ['titre'];?>"  placeholder="changer le titre">
-                    </div><br>
-                    <button type="submit" >submit</button>  
-                    </form>
+                   
 
 
 
-
-                    <div class="wrapper"><h1>Portfolio</h1></div>
+                    <div class="wrapper"><h1>Modifier mes partie de mes projets</h1></div>
                 
 
                 <span class="left-arrow" id="left"></span>
                     
                     <div class="projects__list">
-                    <div>
+                    <!-- <div>
                         <img class="mySlides" src="../img/youAgency.png" style="width:100%">
                         <img class="mySlides" src="../img/site e commerce.png" style="width:100%">
                         <img class="mySlides" src="../img/corona -hero.png" style="width:100%">
@@ -188,9 +168,29 @@ $row = mysqli_fetch_array($qslmodif);
                       <img class="arrow" src="../img/arrow-39450_640.png" style="width:60px">
                         
                       <a href="https://github.com/khadija1998"><button  class="button" >Githup<strong> </strong></button></a>
-                    </div>
-                    <button class='edit' onclick='window.location.href="http://localhost/FILL-ROUGE/views/Edit.php"'>modifier mes projets</button>
-        </section>
+                    </div> -->
+                    <?php
+$qslmodif = mysqli_query($Conn, "SELECT titre, para, photo FROM projects");
+$row = mysqli_fetch_array($qslmodif);
+?>
+        <form  method="POST" action="">
+                 
+                    <div class="a">
+                    <label >Le titre</label><br>
+                    <input  name="titre" id="" value= "<?php echo $row ['titre'];?>"  placeholder="changer le titre">
+                    </div><br>
+                    <div class ="b">
+                    <label >Le text</label>
+                    <textarea name="paragraphe" id="" value="<?php echo $row ['para'];?>" placeholder="changer le paragraphe" ></textarea>
+                    </div><br>
+                    <div class="c">
+                    <label >La photo</label><br>
+                    <input type="file"  name="photo" id="" value= "<?php echo $row ['titre'];?>"  placeholder="changer le titre">
+                    </div><br>
+                    <button type="submit" >submit</button>  
+                    </form>
+
+        </section><br><br><br><br><br><br><br><br>
 
 
 
